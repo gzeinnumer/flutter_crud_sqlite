@@ -51,7 +51,7 @@ class DBHelper{
 
   void updateData(Contact c) async{
     var dbConnection = await db;
-    String query = 'UPDATE $TABLE_NAME SET name=\'${c.name}\' phone=\'${c.phone}\' WHERE id=\'${c.id}\';';
+    String query = 'UPDATE $TABLE_NAME SET name=\'${c.name}\' ,phone=\'${c.phone}\' WHERE id=\'${c.id}\';';
     await dbConnection.transaction((transaction) async{
       return await transaction.rawQuery(query);
     });
